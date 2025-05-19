@@ -30,7 +30,7 @@ class Agent(object):
     def __init__(self):
         self.action_space = gym.spaces.Box(-1.0, 1.0, (21,), np.float64)
         self.policy = GaussianPolicy(67, 21)
-        self.policy.load_state_dict(torch.load("GPT_sac_episode_1600.pth", map_location=torch.device('cpu'))['policy_state_dict'])
+        self.policy.load_state_dict(torch.load("GPT_sac_episode_1550.pth", map_location=torch.device('cpu'))['policy_state_dict'])
 
     def act(self, observation):
         x = torch.from_numpy(observation).unsqueeze(0).float()
